@@ -4,13 +4,16 @@ public class Patient {
     private int birthYear; // patient's year of birth (CE)
     private double height; // patient's height in centimeters
     private double weight; // patient's weight in kilograms
+    private String bloodGroup;
+    private String phoneNumber;
 
     /************************************************
      ***************** Constructor ******************
      *************************************************/
 
     public Patient(int id, String name, int birthYear,
-                   double height, double weight) {
+                   double height, double weight,
+                   String bloodGroup, String phoneNumber) {
         // TODO: Initialize fields with validation
         // Consider: What makes a valid birthYear?
         //           What are valid ranges for height and weight?
@@ -40,6 +43,9 @@ public class Patient {
         else {
             this.weight = 0;
         }
+
+        this.bloodGroup = bloodGroup;
+        this.phoneNumber = phoneNumber;
     }
 
     /************************************************
@@ -79,11 +85,21 @@ public class Patient {
         }
     }
 
+    public String getBloodGroup() {
+        return this.bloodGroup;
+    }
+
+    public String getPhoneNumber() {
+        return this.phoneNumber;
+    }
+
     public void displayDetails(int currentYear) {
         System.out.println("Patient Name: " + name);
         System.out.println("Patient Age: " + getAge(currentYear));
         System.out.println("Patient Height (cm): " + height);
         System.out.println("Patient Weight (kg): " + weight);
+        System.out.println("Patient Blood Group: " + bloodGroup);
+        System.out.println("Patient Phone Number: " + phoneNumber);
     }
 
 }
