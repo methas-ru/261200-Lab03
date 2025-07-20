@@ -93,6 +93,10 @@ public class Patient {
         return this.phoneNumber;
     }
 
+    public double getBMI() {
+        return weight / ((height/100) * (height/100));
+    }
+
     public void displayDetails(int currentYear) {
         System.out.println("Patient Name: " + name);
         System.out.println("Patient Age: " + getAge(currentYear));
